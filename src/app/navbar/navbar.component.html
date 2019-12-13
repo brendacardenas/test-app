@@ -1,0 +1,28 @@
+<ul>
+  <li>
+      <div class="menu-wrap">
+      <input type="checkbox" class="toggler">
+        <div class="hamburger"><div></div></div>
+          <div class="menu">
+            <div>
+              <div>
+                <ul>
+                  <li><a [routerLink]="['/']" routerLinkActive="active">Catalog</a></li>
+                  <li><a [routerLink]="['/people']" routerLinkActive="active">people</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li> <a [routerLink]="['/']" routerLinkActive="active"><img src="assets/starwarslogo.png"></a></li>
+      <li>
+<div class="search-container">
+  <form action="/search">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</div>
+  </li>
+</ul>
+

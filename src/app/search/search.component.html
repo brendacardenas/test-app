@@ -1,0 +1,10 @@
+<br>
+<a [routerLink]="['/']" routerLinkActive="active"><h2>Back</h2></a>
+<br>
+<br>
+<h1>Search result...</h1>
+<br>
+<br>
+<app-film-block *ngIf="movies$.length" [movies]="movies$"></app-film-block>
+<hr>
+<app-people-block *ngIf="persons$.length" [persons]="persons$"></app-people-block>
