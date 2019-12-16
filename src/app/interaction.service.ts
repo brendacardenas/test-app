@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient}  from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,9 @@ import { HttpClient}  from '@angular/common/http';
 export class InteractionService {
   
   apiUrl: string = 'https://swapi.co/api';
+ // peopleUrl: string ='https://swapi.co/api/people';
+  //queryUrl: string = '?search=';
+
 
   constructor ( private _http: HttpClient) { }
 
@@ -43,6 +47,16 @@ export class InteractionService {
   {
     return this._http.get<any[]>(this.apiUrl + '/vehicles/');
   }
-}
+ // search(terms: Observable<string>) {
+   // return terms.debounceTime(400)
+  //    .distinctUntilChanged()
+  //    .switchMap(term => this.searchEntries(term));
+ // }
+ // searchEntries(term) {
+//    return this._http
+//        .get(this.peopleUrl + this.queryUrl + term)
+     //   .subscribe(res => res.json());
+  }
+
 
 
