@@ -66,30 +66,30 @@ apiRoot: string ='https://swapi.co/api/people';
     return this._http.get<any[]>(this.apiUrl + '/vehicles/');
   }
 
-  /**starwars search */
-  search(search: string) {
-   let promise = new Promise((resolve, reject) => {
-     let apiURL = `${this.apiRoot}?search=${search}`;
-      this._http
-       .get(apiURL)
-        .toPromise()
-        .then(
-         res => {
-            // Success
-            this.results = res.results.map(res => {
-             return new SearchItem(res.name);
-           });
-           resolve();
-          },
-          msg => {
-            // Error
-            reject(msg);
-         }
-        );
-    });
-   return promise;
-  }
    /**starwars search */
-  
-
-}
+   search(search: string) {
+    let promise = new Promise((resolve, reject) => {
+      let apiURL = `${this.apiRoot}?search=${search}`;
+       this._http
+        .get(apiURL)
+         .toPromise()
+         .then(
+          res => {
+             // Success
+             this.results = res.results.map(res => {
+              return new SearchItem(res.name);
+            });
+            resolve();
+           },
+           msg => {
+             // Error
+             reject(msg);
+          }
+         );
+     });
+    return promise;
+   }
+    /**starwars search */
+   
+ 
+ }

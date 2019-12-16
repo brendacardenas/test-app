@@ -9,8 +9,7 @@ import { InteractionService } from '../interaction.service';
 //import { HttpClientModule, HttpClient } from "@angular/common/http";
  /**starwars search */
 
-
-@Component({
+ @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
@@ -33,6 +32,5 @@ movies$: Imovie[] = [];
     this.loading = true;
     this.itunes.search(term).then(_ => (this.loading = false));
  
+ }
 }
-}
-

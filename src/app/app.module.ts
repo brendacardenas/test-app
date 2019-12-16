@@ -15,7 +15,6 @@ import { PeopleBlockComponent } from './people/people-block/people-block.compone
 import { FilmBlockComponent } from './home/film-block/film-block.component';
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
-
 @NgModule({
   declarations: [
     AppComponent,
