@@ -1,6 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient}  from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+
+ /**starwars search */ 
+class SearchItem {
+  constructor(
+    public name: string,
+    public homeworld: string,
+    public id: number,
+  ) {}
+}
+ /**starwars search */
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +17,20 @@ import { Observable } from 'rxjs/Observable';
 export class InteractionService {
   
   apiUrl: string = 'https://swapi.co/api';
- // peopleUrl: string ='https://swapi.co/api/people';
-  //queryUrl: string = '?search=';
+  
+  /**starwars search */
+results: SearchItem[];
+ loading: boolean;
+apiRoot: string ='https://swapi.co/api/people';
+ queryUrl: string = '?search=';
+ /**starwars search */
 
-
-  constructor ( private _http: HttpClient) { }
+  constructor ( private _http: HttpClient) { 
+   /**starwars search */
+ this.results = [];
+ this.loading = false;
+    /**starwars search */ 
+  }
 
   getFilms() {
     //old return this._http.get<any[]>(this.apiUrl + '/films/');
@@ -47,16 +65,31 @@ export class InteractionService {
   {
     return this._http.get<any[]>(this.apiUrl + '/vehicles/');
   }
- // search(terms: Observable<string>) {
-   // return terms.debounceTime(400)
-  //    .distinctUntilChanged()
-  //    .switchMap(term => this.searchEntries(term));
- // }
- // searchEntries(term) {
-//    return this._http
-//        .get(this.peopleUrl + this.queryUrl + term)
-     //   .subscribe(res => res.json());
+
+  /**starwars search */
+  search(search: string) {
+   let promise = new Promise((resolve, reject) => {
+     let apiURL = `${this.apiRoot}?search=${search}`;
+      this._http
+       .get(apiURL)
+        .toPromise()
+        .then(
+         res => {
+            // Success
+            this.results = res.results.map(res => {
+             return new SearchItem(res.name);
+           });
+           resolve();
+          },
+          msg => {
+            // Error
+            reject(msg);
+         }
+        );
+    });
+   return promise;
   }
+   /**starwars search */
+  
 
-
-
+}

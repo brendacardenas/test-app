@@ -8,3 +8,38 @@
 <app-film-block *ngIf="movies$.length" [movies]="movies$"></app-film-block>
 <hr>
 <app-people-block *ngIf="persons$.length" [persons]="persons$"></app-people-block>
+
+
+<!-- STARWARS STUFF-->
+<form>
+	<div>
+		<input type="search"
+		       placeholder="Enter charachter name"
+		       #search>
+	</div>
+	<button type="button"  (click)="doSearch(search.value)">Search</button>
+</form>
+
+<hr/>
+
+<div >
+  <p  *ngIf="loading">Loading...</p>
+</div>
+<div class="flexbox-container">
+	<div 	    *ngFor="let track of itunes.results" class="flexbox-item flexbox-item-1">
+		<h1><a target="https://swapi.co/api/people"
+		   href="{{track.link}}">{{ track.name }}{{track.homeworld}}
+		</a></h1>
+	
+</div>
+</div>
+
+<!--STARWARS STUFF-->
+
+<div  class="flexbox-container">
+	<div *ngFor='let movie of movies'class="flexbox-item flexbox-item-1">
+		<h3><a [routerLink]="['./film-details', movie.url]">
+		{{movie.title}}</a></h3>
+		<p>Director: {{movie.director}}</p> 
+		<p>Producer: {{movie.producer}}</p>
+	</div>

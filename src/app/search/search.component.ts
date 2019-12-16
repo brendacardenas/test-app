@@ -1,7 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Imovie } from '../movie';
-import { Ipeople } from '../people';
+import { Component, OnInit} from '@angular/core';
+import { InteractionService } from '../interaction.service';
 
+
+ /**starwars search */
+//import { InteractionService } from '../interaction.service';
+//import { BrowserModule } from "@angular/platform-browser";
+//import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+//import { HttpClientModule, HttpClient } from "@angular/common/http";
+ /**starwars search */
 
 
 @Component({
@@ -11,14 +17,22 @@ import { Ipeople } from '../people';
 })
 export class SearchComponent implements OnInit {
 
-  persons$: Ipeople[] = [];
-  movies$: Imovie[] = [];
+persons$: Ipeople[] = [];
+movies$: Imovie[] = [];
+
+  private loading: boolean = false;
 
 
 
-  constructor() { }
+  constructor(private itunes: InteractionService) { }
 
   ngOnInit() {
+   
   }
-
+ doSearch(term: string) {
+    this.loading = true;
+    this.itunes.search(term).then(_ => (this.loading = false));
+ 
 }
+}
+

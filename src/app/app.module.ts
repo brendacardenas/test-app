@@ -13,6 +13,7 @@ import { InteractionService } from './interaction.service';
 import { PeopleDetailsComponent } from './people-details/people-details.component';
 import { PeopleBlockComponent } from './people/people-block/people-block.component';
 import { FilmBlockComponent } from './home/film-block/film-block.component';
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
 
 @NgModule({
@@ -37,3 +38,5 @@ import { FilmBlockComponent } from './home/film-block/film-block.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
