@@ -1,8 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NgModule, Component, Injectable } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { Imovie } from '../movie';
 import { Ipeople } from '../people';
 
