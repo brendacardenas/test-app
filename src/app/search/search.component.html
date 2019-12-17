@@ -27,8 +27,8 @@
 </div>
 <div class="flexbox-container">
 	<div 	    *ngFor="let track of itunes.results" class="flexbox-item flexbox-item-1">
-		<h1><a target="https://swapi.co/api/people"
-		   href="{{track.link}}">{{ track.name }}{{track.homeworld}}
+		<h1><a target="['/people-details']"
+		   href="{{track.link}}">{{ track.name}}
 		</a></h1>
 	
 </div>
@@ -36,10 +36,3 @@
 
 <!--STARWARS STUFF-->
 
-<div  class="flexbox-container">
-	<div *ngFor='let movie of movies'class="flexbox-item flexbox-item-1">
-		<h3><a [routerLink]="['./film-details', movie.url]">
-		{{movie.title}}</a></h3>
-		<p>Director: {{movie.director}}</p> 
-		<p>Producer: {{movie.producer}}</p>
-	</div>

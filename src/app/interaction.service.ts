@@ -7,6 +7,7 @@ class SearchItem {
     public name: string,
     public homeworld: string,
     public id: number,
+    public title: string,
   ) {}
 }
  /**starwars search */

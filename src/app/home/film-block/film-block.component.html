@@ -1,5 +1,5 @@
 <div  class="flexbox-container">
-        <div *ngFor='let movie of movies'class="flexbox-item flexbox-item-1">
+        <div *ngFor='let movie of movies'class="flexbox-item">
             <h3><a [routerLink]="['./film-details', movie.url]">
             {{movie.title}}</a></h3>
             <p>Director: {{movie.director}}</p> 
