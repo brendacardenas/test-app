@@ -12,7 +12,6 @@ export class FilmDetailsComponent implements OnInit {
 
   movie: any;
   planet: any;
-
   constructor(private route: ActivatedRoute, private interactionService: InteractionService,
     ) { }
     
@@ -37,4 +36,3 @@ export class FilmDetailsComponent implements OnInit {
   })
  }
 }
-

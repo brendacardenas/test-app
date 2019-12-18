@@ -5,12 +5,12 @@ import { HttpClient}  from '@angular/common/http';
 class SearchItem {
   constructor(
     public name: string,
-    public homeworld: string,
     public id: number,
     public title: string,
   ) {}
 }
  /**starwars search */
+
 
 @Injectable({
   providedIn: 'root'
@@ -64,7 +64,7 @@ apiRoot: string ='https://swapi.co/api/people';
   //*This is to get all the vehicles from all movies*//    
   getCarData()  
   {
-    return this._http.get<any[]>(this.apiUrl + '/vehicles/');
+    return this._http.get<any[]>(this.apiUrl + 'vehicleId');
   }
 
    /**starwars search */
@@ -91,6 +91,7 @@ apiRoot: string ='https://swapi.co/api/people';
     return promise;
    }
     /**starwars search */
+
+
+}
    
- 
- }
