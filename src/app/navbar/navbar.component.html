@@ -1,30 +1,25 @@
 <div class="topcontainer">
-  <ul class="flex-containers">
-    <li class="flex-items">
-      <div class="menu-wrap">
-        <input type="checkbox" class="toggler">
-          <div class="hamburger"><div></div></div>
-            <div class="menu">
-              <div>
-                <div>
-                  <ul>
-                  <li><a [routerLink]="['/']" routerLinkActive="active">Catalog</a></li>
-                  <li><a [routerLink]="['/people']" routerLinkActive="active">people</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-    </li>
-    <li class="flex-items"><a [routerLink]="['/']" routerLinkActive="active"><img src="assets/starwarslogo.png"></a></li>
-    <li class="flex-items">
-      <div class="topnav">
+  <div id="menuToggle">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="menu">
+      <li><a [routerLink]="['/']" routerLinkActive="active">Catalog</a></li>
+      <li><a [routerLink]="['/people']" routerLinkActive="active">people</a></li>
+    </ul>
+  </div>
+<ul class="flex-container">
+    <li class="flex-item"></li>
+    <li class="flex-item"><a [routerLink]="['/']" routerLinkActive="active"><img src="assets/starwarslogo.png"></a></li>
+    <li class="flex-item">      
+        <div class="topnav">
         <form class="search-container" action="/search">
         <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit"><i class="fa fa-search"></i>    </button>
         </form>
         </div>
-    </li>
+        </li>
   </ul>
   </div>
   
