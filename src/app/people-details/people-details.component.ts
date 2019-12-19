@@ -4,6 +4,8 @@ import { InteractionService } from '../interaction.service';
 import { Ivehicle } from '../vehicle';
 
 
+
+
 @Component({
   selector: 'app-people-details',
   templateUrl: './people-details.component.html',
@@ -13,17 +15,18 @@ export class PeopleDetailsComponent implements OnInit {
 
   people: any;
   planet: any;
-  vehicle: any;
-  cars$: Ivehicle[];
   
+ // cars$: Ivehicle[];
+ // name:any;
+
   constructor(private route: ActivatedRoute, private interactionService: InteractionService,
     ) { }
 
   ngOnInit() {
     this.nameMethod();
     this.planetMethod();
-    this.vehicleMethod();
-    this.carMethod();
+ //   this.vehicleMethod();
+   // this.carMethod();
  // console.log(this.route);
   }
 
@@ -32,7 +35,7 @@ export class PeopleDetailsComponent implements OnInit {
   let name = this.route.snapshot.paramMap.get('url');
   this.interactionService.getPeopleData(name).subscribe(p =>{
   this.people = p;
-  })
+  });
  }
 
   planetMethod()
@@ -40,16 +43,18 @@ export class PeopleDetailsComponent implements OnInit {
     let name = this.route.snapshot.paramMap.get('url');
     this.interactionService.getPlanetData(name).subscribe(w =>{
     this.planet = w;
-  })
+  });
  }
 
-  vehicleMethod()
-  {
-   let name = this.route.snapshot.paramMap.get('url');
-  this.interactionService.getVehicleData(name).subscribe(v =>{
- this.vehicle = v;
- })
- }
+ // vehicleMethod()
+//  {
+//   this.route.snapshot.paramMap.get('id');
+//   this.interactionService.getVehicleData(1).subscribe(res =>{
+//   this.vehicle$ = res;
+//   }
+
+   //)
+// }
  //*This is to get all the vehicles from all movies*//    
  //carMethod() {
  // let name = this.route.snapshot.paramMap.get('url');

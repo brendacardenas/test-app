@@ -14,7 +14,7 @@
   </div>
   <br>
   <h2>FILMS</h2>
-    <ul style="list-style-type:none;">
+    <ul></ul>
         <li>{{people.films}}</li>
         <li></li>
         <li></li>
@@ -23,17 +23,10 @@
     </ul>
   <br>  
   <h2>PLANETS</h2>
-    <ul style="list-style-type:none;" >
+    <ul >
       <li>{{planet.name}}</li>
       <li>{{people.homeworld}}</li>
       <li>{{planet.name}}</li>
       <li>{{people.homeworld}}</li>
     </ul>
   <br>
-  <h2>VEHICLES</h2>
-    <ul style="list-style-type:none;" *ngFor= "let car of cars$" >        
-       <li>{{car.name}}</li>
-    </ul>
-   
-<!--<a [routerLink]="['./film-details', people.films]"</a>>-->    
-

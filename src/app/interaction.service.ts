@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient}  from '@angular/common/http';
 
+
  /**starwars search */ 
 class SearchItem {
   constructor(
@@ -43,7 +44,7 @@ apiRoot: string ='https://swapi.co/api/people';
     return this._http.get(this.apiUrl + '/people/');
   }
 
- getMovieData(url:string)
+  getMovieData(url:string)
  {
      return this._http.get("https://swapi.co/api/films/" +  url.slice(-2));
  }
@@ -57,9 +58,13 @@ apiRoot: string ='https://swapi.co/api/people';
      return this._http.get("https://swapi.co/api/planets/" + url.slice(-2));    
     }
 
-  getVehicleData(url:string)
-    {
-      return this._http.get("https://swapi.co/api/vehicles/" + url.slice(-2));    }
+  //getVehicleData(id:number)
+  //  {
+    //  return this._http.get("https://swapi.co/api/vehicles/" + url.slice(-2));    
+ //   return this._http.get<any>(`${this.apiUrl}vehicles/${id}?format=json`)
+ //   .pipe(
+ //   );
+ //   }
 
   //*This is to get all the vehicles from all movies*//    
   //getCarData()  
