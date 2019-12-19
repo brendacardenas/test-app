@@ -50,14 +50,15 @@ export class PeopleDetailsComponent implements OnInit {
  this.vehicle = v;
  })
  }
- carMethod() {
-  let name = this.route.snapshot.paramMap.get('url');
-  this.interactionService.getCarData()
-  .subscribe(data => {
-    this.cars$ = data.results;
-  });
-
-}
+ //*This is to get all the vehicles from all movies*//    
+ //carMethod() {
+ // let name = this.route.snapshot.paramMap.get('url');
+ // this.interactionService.getCarData()
+ // .subscribe(data => {
+ //   this.cars$ = data.results;
+//  });
+//*This is to get all the vehicles from all movies*//    
+//}
 }
 
 

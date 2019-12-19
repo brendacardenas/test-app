@@ -16,11 +16,11 @@ export class FilmDetailsComponent implements OnInit {
     ) { }
     
   ngOnInit() {
-    this.idMethod();
+    this.movieMethod();
     this.planetMethod();
   }
 
- idMethod()
+ movieMethod()
   {
     let episode_id = this.route.snapshot.paramMap.get('url');
     this.interactionService.getMovieData(episode_id).subscribe(m =>{

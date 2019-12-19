@@ -62,10 +62,10 @@ apiRoot: string ='https://swapi.co/api/people';
       return this._http.get("https://swapi.co/api/vehicles/" + url.slice(-2));    }
 
   //*This is to get all the vehicles from all movies*//    
-  getCarData()  
-  {
-    return this._http.get<any[]>(this.apiUrl + 'vehicleId');
-  }
+  //getCarData()  
+  //{
+  //  return this._http.get<any[]>(this.apiUrl + 'vehicleId');
+  //}
 
    /**starwars search */
    search(search: string) {
