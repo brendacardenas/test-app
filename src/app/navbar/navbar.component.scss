@@ -28,11 +28,13 @@ img {
   cursor: pointer;
   font-size: 15px;
   position: relative;
+
+  &:hover{
+    background: $dark;
+    color: white;
+  }
 }
-.topnav .search-container button:hover {
-  background: $dark;
-  color: white;
-}
+
 
 //*NAVBAR**//
 .flex-container {
@@ -74,11 +76,10 @@ img {
   color:$bright;
   font-family: Staatliches;
   transition: color 0.3s ease;
-}
 
-#menuToggle a:hover
-{
-  color: White;
+    &:hover{
+      color: White;
+    }
 }
 
 #menuToggle input
@@ -171,7 +172,6 @@ img {
   /*small devices (phones, 600px and down)*/
 @media screen and (max-width: 600px) {
   .topnav .search-container {
-    width: 100%;
     padding-bottom: 20px;
     color: grey;
     border: 5px white;
@@ -189,12 +189,13 @@ img {
     color:$dark;
     cursor: pointer;
     font-size: 15px;
+
+      &:hover{
+        background: $dark;
+        color: white;
+      }
+    }
   }
-  .topnav .search-container button:hover {
-    background: $dark;
-    color: white;
-  }
-}
  
 /*small devices (phones, 600 to 800) */
 @media screen and ( min-width:601px)and (max-width:1000px)  {
@@ -215,10 +216,11 @@ img {
     color:$dark;
     cursor: pointer;
     font-size: 15px;
-  }
-  .topnav .search-container button:hover {
-    background: $dark;
-    color: white;
+
+    &:hover{
+      background: $dark;
+      color: white;
+    }
   }
 }
 
