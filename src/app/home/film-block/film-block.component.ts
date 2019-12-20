@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Imovie } from 'src/app/movie';
+import { Film } from 'src/app/movie';
 
 @Component({
   selector: 'app-film-block',
@@ -8,7 +8,7 @@ import { Imovie } from 'src/app/movie';
 })
 export class FilmBlockComponent implements OnInit {
 
- @Input() movies: Imovie[] = [];
+ @Input() movies: Film[] = [];
 
   constructor() { }
 

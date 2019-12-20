@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute } from '@angular/router';
 import { InteractionService } from '../interaction.service';
+/**testing */
+import { Observable, } from 'rxjs';
+import { Film, Vehicle } from '../movie';
+/**testing */
+
 
 @Component({
   selector: 'app-film-details',
@@ -12,12 +17,18 @@ export class FilmDetailsComponent implements OnInit {
 
   movie: any;
   planet: any;
+  //characters:any;
+  /**testing */
+  Vehicle$: [];
+/**testing */
+
   constructor(private route: ActivatedRoute, private interactionService: InteractionService,
     ) { }
     
   ngOnInit() {
     this.movieMethod();
     this.planetMethod();
+    this.vehicleMethod();
   }
 
  movieMethod()
@@ -35,4 +46,11 @@ export class FilmDetailsComponent implements OnInit {
   this.planet = w;
   })
  }
-}
+ vehicleMethod(){
+   let name = this.route.snapshot.paramMap.get('name');
+   this.interactionService.getVehicle(name).subscribe(c =>{
+    this.Vehicle$ = c;
+    })
+    }
+  }
+

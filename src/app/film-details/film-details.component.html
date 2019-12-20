@@ -11,7 +11,7 @@
 </div>
 <h2>CHARACTERS</h2>
   <ul>
-      <li></li>
+      <li>{{movie.characters}}</li>
       <li></li>
       <li></li>
       <li></li>
@@ -29,7 +29,12 @@
     <li>{{movie.vehicles}}</li>
     <li></li>
     <li></li>
-    <li></li>
+    <li>{{Vehicle$.name}}</li>
+    <li *ngIf="vehicles$ | async as car">
+      <h1>{{car.name}}</h1>
+      <h1>this is not working</h1>
+    </li>
+
+    <h2>this is not working</h2>
    </ul>
     
-

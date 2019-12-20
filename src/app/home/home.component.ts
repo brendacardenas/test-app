@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InteractionService } from '../interaction.service';
-import { Imovie } from '../movie';
+import { Film } from '../movie';
 import {Router } from '@angular/router';
 
 
@@ -11,10 +11,10 @@ import {Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-movies$: Imovie[] = [];
+movies$: Film[] = [];
 
-// old movies$: Imovie[];
-//episodes$: Imovie[];
+// old movies$: Film[];
+//episodes$: Film[];
 
   constructor( private interactionService: InteractionService, private router: Router) {}
  
