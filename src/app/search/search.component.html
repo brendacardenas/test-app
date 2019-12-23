@@ -26,7 +26,7 @@
   <p  *ngIf="loading">Loading...</p>
 </div>
 <div class="flexbox-container">
-	<div 	    *ngFor="let track of itunes.results" class="flexbox-item flexbox-item-1">
+	<div 	    *ngFor="let track of isearch.results" class="flexbox-item flexbox-item-1">
 		<h1><a target="['/people-details']"
 		   href="{{track.link}}">{{ track.name}}
 		</a></h1>

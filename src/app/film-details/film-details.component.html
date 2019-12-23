@@ -6,7 +6,7 @@
     <p><b>Description:</b> {{movie.opening_crawl}}</p> 
     <p><b>Driector:</b> {{movie.director}}</p>
     <p><b>Producer:</b> {{movie.producer}}</p>
-    <p><b>Release Date:</b> {{movie.release_date}}</p>
+    <p><b>Release Date:</b> {{movie.release_date | date}}</p>
   </ul>
 </div>
 <h2>CHARACTERS</h2>
@@ -29,10 +29,10 @@
     <li>{{movie.vehicles}}</li>
     <li></li>
     <li></li>
-    <li>{{Vehicle$.name}}</li>
-    <li *ngIf="vehicles$ | async as car">
+    <li>
       <h1>{{car.name}}</h1>
-      <h1>this is not working</h1>
+
+      <h1>{{vehicles.name}}</h1>
     </li>
 
     <h2>this is not working</h2>

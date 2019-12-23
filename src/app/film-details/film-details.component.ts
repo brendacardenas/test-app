@@ -15,11 +15,12 @@ import { Film, Vehicle } from '../movie';
 })
 export class FilmDetailsComponent implements OnInit {
 
+  Vehicle:  Array<string>
   movie: any;
   planet: any;
   //characters:any;
   /**testing */
-  Vehicle$: [];
+  car: Vehicle[];
 /**testing */
 
   constructor(private route: ActivatedRoute, private interactionService: InteractionService,
@@ -49,7 +50,7 @@ export class FilmDetailsComponent implements OnInit {
  vehicleMethod(){
    let name = this.route.snapshot.paramMap.get('name');
    this.interactionService.getVehicle(name).subscribe(c =>{
-    this.Vehicle$ = c;
+    this.car = c;
     })
     }
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { InteractionService } from '../interaction.service';
-
+import {Film } from '../movie';
+import { Ipeople} from '../people';
 
  /**starwars search */
 //import { InteractionService } from '../interaction.service';
@@ -17,20 +18,17 @@ import { InteractionService } from '../interaction.service';
 export class SearchComponent implements OnInit {
 
 persons$: Ipeople[] = [];
-movies$: Imovie[] = [];
+movies$: Film[] = [];
 
   private loading: boolean = false;
 
-
-
-  constructor(private itunes: InteractionService) { }
+  constructor(private isearch: InteractionService) { }
 
   ngOnInit() {
    
   }
  doSearch(term: string) {
     this.loading = true;
-    this.itunes.search(term).then(_ => (this.loading = false));
- 
- }
+    this.isearch.search(term).then(_ => (this.loading = false));
+  }
 }

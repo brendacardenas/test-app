@@ -5,7 +5,7 @@ export class Film {
     producer: string;
     episode_id: number;
     planets: string;
-    vehicles: string[];
+    vehicles:  Array<string>;
     characters: string;
     url: string;
     release_date: string;
@@ -13,8 +13,6 @@ export class Film {
 
 export class Vehicle {
     name: string;
-    films: string[];
-    pilots: string[];
     url: string;
 }
 
@@ -28,8 +26,6 @@ export class Planet {
     climate: string;
     terrain: string;
     surface_water: string;
-    residents: string[];
-    films: string[];
     url: string;
     created: Date;
     edited: Date;
